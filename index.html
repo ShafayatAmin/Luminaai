@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina AI - Your Study Partner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Lumina.png">
+</head>
+<body>
+    <!-- Background Layer -->
+    <div class="bg-layer">
+        <div class="bg-gradient"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Dark Backdrop Overlay for Mobile Drawer Menu -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar/Drawer Layout -->
+        <header class="sidebar">
+            <div class="logo-container">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <img src="Lumina.png" alt="Lumina Logo" class="logo">
+                    <div>
+                        <h1 class="app-title">Lumina AI</h1>
+                        <p class="app-subtitle">Build in ShafuForge</p>
+                    </div>
+                </div>
+                <!-- Close menu button for mobile views -->
+                <button class="close-menu-btn" id="closeMenuBtn" aria-label="Close menu">&times;</button>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-section="chat">💬 Chat</a>
+                <a href="#" class="nav-item" data-section="about">ℹ️ About</a>
+                <a href="#" class="nav-item" data-section="commands">⚙️ Commands</a>
+                <a href="#" class="nav-item" data-section="contact">📧 Contact</a>
+            </nav>
+
+            <div class="user-info">
+                <div class="status-badge">
+                    <span class="status-dot"></span>
+                    Online
+                </div>
+                <button class="clear-btn" id="clearBtn">Clear Chat</button>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Navbar exclusively for Mobile Viewports -->
+            <div class="mobile-navbar">
+                <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="mobile-title">
+                    <img src="Lumina.png" alt="Lumina" class="mobile-logo">
+                    <span>Lumina AI</span>
+                </div>
+                <div style="width: 40px;"></div> <!-- Structural spacer for centered alignment -->
+            </div>
+
+            <!-- Chat Section -->
+            <section id="chat-section" class="section active">
+                <div class="chat-box">
+                    <div class="chat-header">
+                        <div class="header-info">
+                            <img src="Lumina.png" alt="Lumina" class="header-logo">
+                            <div>
+                                <h2>Chat with Lumina</h2>
+                                <p>Ask anything, get instant answers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="welcome-message">
+                            <img src="Lumina.png" alt="Lumina Welcome" class="welcome-logo">
+                            <h2>Welcome to Lumina AI</h2>
+                            <p>আপনার স্টাডি পার্টনার। যেকোনো প্রশ্ন করুন!</p>
+                            <div class="quick-commands">
+                                <button class="quick-btn" data-command="!help">!help</button>
+                                <button class="quick-btn" data-command="!joke">!joke</button>
+                                <button class="quick-btn" data-command="!quote">!quote</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-wrapper">
+                            <textarea id="chatInput" placeholder="Ask me anything... (Type !help for commands)" rows="1"></textarea>
+                            <button id="sendBtn" class="send-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about-section" class="section">
+                <div class="section-content">
+                    <h2>About Lumina AI</h2>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <h3>🤖 What is Lumina?</h3>
+                            <p>Lumina AI is your personal study assistant powered by advanced AI. Created by Shafu under ShafuForge, designed specifically for students at Batch Alim 28.</p>
+                        </div>
+                        <div class="about-card">
+                            <h3>⚡ Features</h3>
+                            <ul>
+                                <li>Instant answers to any question</li>
+                                <li>Send pictures, videos, and audio</li>
+                                <li>Fun commands (jokes, quotes, roasts)</li>
+                                <li>Available 24/7</li>
+                            </ul>
+                        </div>
+                        <div class="about-card">
+                            <h3>👨‍💻 Creator</h3>
+                            <p><strong>Shafu</strong> - Founder of ShafuForge</p>
+                            <p>Built with passion to help students succeed.</p>
+                        </div>
+                        <div class="about-card">
+                            <h3>🌟 Technology</h3>
+                            <p>Powered by Groq's LLama AI model for fast, accurate responses in English, Bangla, and Banglish.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Commands Section -->
+            <section id="commands-section" class="section">
+                <div class="section-content">
+                    <h2>Available Commands</h2>
+                    <div class="commands-grid">
+                        <div class="command-group">
+                            <h3>📚 Information</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <code>!help</code>
+                                    <span>Show all commands</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!notice</code>
+                                    <span>View official notices</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!notes</code>
+                                    <span>Buy notes guide</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="command-group">
+                            <h3>🎉 Fun</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <code>!joke</code>
+                                    <span>Random joke</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!quote</code>
+                                    <span>Motivational quote</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!roastme</code>
+                                    <span>Get roasted 😂</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!flip</code>
+                                    <span>Flip a coin</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="command-group">
+                            <h3>🎬 Media</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <code>!sendpic [id]</code>
+                                    <span>Get a picture</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!sendvid [id]</code>
+                                    <span>Get a video</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!sendaudio [id]</code>
+                                    <span>Get audio</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="command-group">
+                            <h3>⏰ Utility</h3>
+                            <div class="command-list">
+                                <div class="command-item">
+                                    <code>!time</code>
+                                    <span>Bangladesh time</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!ping</code>
+                                    <span>Check latency</span>
+                                </div>
+                                <div class="command-item">
+                                    <code>!8ball [q]</code>
+                                    <span>Magic 8-ball</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact-section" class="section">
+                <div class="section-content">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-container">
+                        <div class="contact-card">
+                            <h3>Shafu (Creator)</h3>
+                            <div class="contact-links">
+                                <a href="https://wa.me/8801870746153" target="_blank" class="contact-btn">
+                                    <span>📱</span> WhatsApp
+                                </a>
+                                <a href="mailto:shafayatamin0010@gmail.com" class="contact-btn">
+                                    <span>📧</span> Email
+                                </a>
+                                <a href="https://www.facebook.com/shafu0010" target="_blank" class="contact-btn">
+                                    <span>📘</span> Facebook
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <h3>Alim Science Class Groups</h3>
+                            <div class="contact-links">
+                                <a href="#" class="contact-btn">
+                                    <span>🟢</span> WhatsApp Group
+                                </a>
+                                <a href="#" class="contact-btn">
+                                    <span>🔵</span> Messenger Group
+                                </a>
+                                <a href="#" class="contact-btn">
+                                    <span>🌐</span> Website
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
